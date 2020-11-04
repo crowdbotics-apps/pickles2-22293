@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('event_name', models.CharField(max_length=256)),
-                ('event_date', models.DateField(blank=True, null=True)),
-                ('event_description', models.TextField(blank=True, null=True)),
-                ('event_time', models.TimeField(blank=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("event_name", models.CharField(max_length=256)),
+                ("event_date", models.DateField(blank=True, null=True)),
+                ("event_description", models.TextField(blank=True, null=True)),
+                ("event_time", models.TimeField(blank=True, null=True)),
             ],
         ),
     ]

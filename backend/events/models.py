@@ -19,6 +19,32 @@ class Event(models.Model):
         null=True,
         blank=True,
     )
+    event_location = models.ForeignKey(
+        "events.Location",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="event_event_location",
+    )
+
+
+class Location(models.Model):
+    "Generated Model"
+    address1 = models.CharField(
+        max_length=256,
+    )
+    address2 = models.CharField(
+        max_length=256,
+    )
+    city = models.CharField(
+        max_length=256,
+    )
+    state = models.CharField(
+        max_length=2,
+    )
+    zip = models.CharField(
+        max_length=5,
+    )
 
 
 # Create your models here.
