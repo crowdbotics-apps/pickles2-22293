@@ -7,24 +7,38 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0001_initial'),
+        ("events", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Location',
+            name="Location",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('address1', models.CharField(max_length=256)),
-                ('address2', models.CharField(max_length=256)),
-                ('city', models.CharField(max_length=256)),
-                ('state', models.CharField(max_length=2)),
-                ('zip', models.CharField(max_length=5)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("address1", models.CharField(max_length=256)),
+                ("address2", models.CharField(max_length=256)),
+                ("city", models.CharField(max_length=256)),
+                ("state", models.CharField(max_length=2)),
+                ("zip", models.CharField(max_length=5)),
             ],
         ),
         migrations.AddField(
-            model_name='event',
-            name='event_location',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='event_event_location', to='events.Location'),
+            model_name="event",
+            name="event_location",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="event_event_location",
+                to="events.Location",
+            ),
         ),
     ]

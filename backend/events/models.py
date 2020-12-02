@@ -21,9 +21,9 @@ class Event(models.Model):
     )
     event_location = models.ForeignKey(
         "events.Location",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="event_event_location",
     )
 
